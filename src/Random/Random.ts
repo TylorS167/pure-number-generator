@@ -1,29 +1,29 @@
 const REAL_DIVISOR = 4294967296.0
 
 export class Random {
-  private s0: number
-  private s1: number
-  private s2: number
-  private s3: number
+  private seed0: number
+  private seed1: number
+  private seed2: number
+  private seed3: number
 
-  constructor(s0: number, s1: number, s2: number, s3: number) {
-    this.s0 = s0
-    this.s1 = s1
-    this.s2 = s2
-    this.s3 = s3
+  constructor(seed0: number, seed1: number, seed2: number, seed3: number) {
+    this.seed0 = seed0
+    this.seed1 = seed1
+    this.seed2 = seed2
+    this.seed3 = seed3
   }
 
   public next(): { value: number, next: Random } {
-    const e = (this.s0 - rot(this.s1, 27)) >>> 0
-    const s0 = (this.s1 ^ rot(this.s2, 17)) >>> 0
-    const s1 = (this.s2 + this.s3) >>> 0
-    const s2 = (this.s3 + e) >>> 0
+    const e = (this.seed0 - swapLowAndHighBits(this.seed1, 27)) >>> 0
+    const s0 = (this.seed1 ^ swapLowAndHighBits(this.seed2, 17)) >>> 0
+    const s1 = (this.seed2 + this.seed3) >>> 0
+    const s2 = (this.seed3 + e) >>> 0
     const s3 = (e + s0) >>> 0
 
     return { value: s3 / REAL_DIVISOR, next: new Random(s0, s1, s2, s3) }
   }
 }
 
-function rot(x: number, k: number): number {
+function swapLowAndHighBits(x: number, k: number): number {
   return (x << k) | (x >> (32 - k))
 }

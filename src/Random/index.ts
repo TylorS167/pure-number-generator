@@ -1,2 +1,2 @@
 export * from './Random'
-export * from './newRandom'
+export * from './createRandom'

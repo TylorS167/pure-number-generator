@@ -3,17 +3,17 @@ import { Curry2, curry2 } from '167'
 import { Random } from './Random'
 
 export const generate: Curry2<number, Random, ReadonlyArray<number>> = curry2(
-  function generate(amount: number, gen: Random): ReadonlyArray<number> {
-    const array = Array(amount)
+  function generate(quantity: number, randomNumberGenerator: Random): ReadonlyArray<number> {
+    const values = Array(quantity)
 
-    for (let i = 0; i < amount; ++i) {
-      const { value, next } = gen.next()
+    for (let i = 0; i < quantity; ++i) {
+      const { value, next } = randomNumberGenerator.next()
 
-      array[i] = value
+      values[i] = value
 
-      gen = next
+      randomNumberGenerator = next
     }
 
-    return array
+    return values
   },
 )
