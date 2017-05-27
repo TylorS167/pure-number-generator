@@ -15,7 +15,7 @@ npm install --save pure-number-generator
 
 ## API
 
-### `createRandomNumberGenerator(seed0: number, seed1: number, seed2: number, seed3: number): Random`
+### `createRandomNumberGenerator(seed0: number, seed1: number, seed2: number, seed3: number): RandomNumberGenerator`
 
 Creates a new random number generator given 4 seed values.
 
@@ -27,7 +27,7 @@ const generator = createRandomNumberGenerator(20, 40, 60, 80)
 const { value, next } = generator.next()
 ```
 
-### `seedRandom(seed: number): Random`
+### `seedRandom(seed: number): RandomNumberGenerator`
 
 Creates a new random number generator given a single seed value.
 
@@ -39,7 +39,7 @@ const generator = seedRandom(100)
 const { value, next } = generator.next()
 ```
 
-### `generate(quantity: number, generator: Random): ReadonlyArray<number>`
+### `generate(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`
 
 Creates an array of `n` amount of pseudo-random numbers derived from given generator.
 
@@ -49,7 +49,7 @@ import { generate, seedRandom } from 'pure-number-generator'
 const values = generate(100, seedRandom(100)) // => [ 0.7805178083945066, ... ] 100 items
 ```
 
-### `iterateToRandomNumber(iterations: number, seed: Random): number`
+### `iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): number`
 
 Generates a single number as the value by calling `Random.next()` `n` number of
 times.
