@@ -6,7 +6,7 @@ export const iterateToRandomNumber: IterateToRandomNumber = curry2(
   function iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): number {
     let num = 0
 
-    for (let i = 0; i < iterations; ++i) {
+    for (let i = 0; i < Math.max(Math.round(iterations), 1); ++i) {
       const { value, nextGenerator } = next(seed)
 
       num = value
