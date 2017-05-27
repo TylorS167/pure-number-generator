@@ -1,9 +1,8 @@
-import { Curry2, curry2 } from '167'
-
 import { RandomNumberGenerator } from './RandomNumberGenerator'
+import { curry2 } from '167'
 import { next } from './next'
 
-export const iterateToRandomNumber: Curry2<number, RandomNumberGenerator, number> = curry2(
+export const iterateToRandomNumber: IterateToRandomNumber = curry2(
   function iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): number {
     let num = 0
 
@@ -18,3 +17,8 @@ export const iterateToRandomNumber: Curry2<number, RandomNumberGenerator, number
     return num
   },
 )
+
+export interface IterateToRandomNumber {
+  (iterations: number, seed: RandomNumberGenerator): number
+  (iterations: number): (seed: RandomNumberGenerator) => number
+}

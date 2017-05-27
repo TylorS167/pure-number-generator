@@ -1,9 +1,8 @@
-import { Curry2, curry2 } from '167'
-
 import { RandomNumberGenerator } from './RandomNumberGenerator'
+import { curry2 } from '167'
 import { next } from './next'
 
-export const randomNumbers: Curry2<number, RandomNumberGenerator, ReadonlyArray<number>> =
+export const randomNumbers: RandomNumbers =
   curry2(
     function randomNumbers(
       quantity: number,
@@ -22,3 +21,8 @@ export const randomNumbers: Curry2<number, RandomNumberGenerator, ReadonlyArray<
       return values
     },
   )
+
+export interface RandomNumbers {
+  (quantity: number, randomNumberGenerator: RandomNumberGenerator): ReadonlyArray<number>
+  (quantity: number): (randomNumberGenerator: RandomNumberGenerator) => ReadonlyArray<number>
+}
