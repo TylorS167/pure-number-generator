@@ -2,9 +2,9 @@ import { Curry2, curry2 } from '167'
 
 import { RandomNumberGenerator } from './RandomNumberGenerator'
 
-export const generateRandomNumbers: Curry2<number, RandomNumberGenerator, ReadonlyArray<number>> =
+export const randomNumbers: Curry2<number, RandomNumberGenerator, ReadonlyArray<number>> =
   curry2(
-    function generate(
+    function randomNumbers(
       quantity: number,
       randomNumberGenerator: RandomNumberGenerator): ReadonlyArray<number>
     {

@@ -1,4 +1,5 @@
 export * from './RandomNumberGenerator'
-export * from './seedRandom'
-export * from './generateRandomNumbers'
+export * from './createWithSeed'
+export * from './createWithSeeds'
 export * from './iterateToRandomNumber'
+export * from './randomNumbers'

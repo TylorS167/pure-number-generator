@@ -15,38 +15,38 @@ npm install --save pure-number-generator
 
 ## API
 
-#### `createRandomNumberGenerator(seed0: number, seed1: number, seed2: number, seed3: number): RandomNumberGenerator`
+#### `createWithSeeds(seed0: number, seed1: number, seed2: number, seed3: number): RandomNumberGenerator`
 
 Creates a new random number generator given 4 seed values.
 
 ```typescript
-import { createRandomNumberGenerator } from 'pure-number-generator'
+import { createWithSeeds } from 'pure-number-generator'
 
-const generator = createRandomNumberGenerator(20, 40, 60, 80)
+const generator = createWithSeeds(20, 40, 60, 80)
 
 const { value, next } = generator.next()
 ```
 
-#### `seedRandom(seed: number): RandomNumberGenerator`
+#### `createWithSeed(seed: number): RandomNumberGenerator`
 
 Creates a new random number generator given a single seed value.
 
 ```typescript
-import { seedRandom } from 'pure-number-generator'
+import { createWithSeed } from 'pure-number-generator'
 
-const generator = seedRandom(100)
+const generator = createWithSeed(100)
 
 const { value, next } = generator.next()
 ```
 
-#### `generateRandomNumbers(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`
+#### `randomNumbers(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`
 
 Creates an array of `n` amount of pseudo-random numbers derived from given generator.
 
 ```typescript
-import { generateRandomNumbers, seedRandom } from 'pure-number-generator'
+import { randomNumbers, createWithSeed } from 'pure-number-generator'
 
-const values = generateRandomNumbers(100, seedRandom(100)) // => [ 0.7805178083945066, ... ] 100 items
+const values = randomNumbers(100, createWithSeed(100)) // => [ 0.7805178083945066, ... ] 100 items
 ```
 
 #### `iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): number`
@@ -55,7 +55,7 @@ Generates a single number as the value by calling `Random.next()` `n` number of
 times.
 
 ```typescript
-import { iterateToRandomNumber, seedRandom }
+import { iterateToRandomNumber, createWithSeed }
 
-const value = iterateToRandomNumber(1000, seedRandom(100)) // => 0.5745331489015371
+const value = iterateToRandomNumber(1000, createWithSeed(100)) // => 0.5745331489015371
 ```
