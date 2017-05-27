@@ -66,7 +66,7 @@ const values = randomNumbers(100, createWithSeed(100)) // => [ 0.780517808394506
 
 Generates a single number as the value by calling `Random.next()` `n` number of
 times. All numbers given as `iterations` will be rounded to the nearest integer and
-all number less than 1 will default to `1`.
+all numbers less than 1 will default to `1`.
 
 ```typescript
 import { iterateToRandomNumber, createWithSeed }
