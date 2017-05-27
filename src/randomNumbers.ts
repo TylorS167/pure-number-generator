@@ -6,7 +6,8 @@ export const randomNumbers: RandomNumbers =
   curry2(
     function randomNumbers(
       quantity: number,
-      randomNumberGenerator: RandomNumberGenerator): ReadonlyArray<number>
+      randomNumberGenerator: RandomNumberGenerator,
+    ): { values: ReadonlyArray<number>, nextGenerator: RandomNumberGenerator }
     {
       const values = Array(quantity)
 
@@ -18,11 +19,14 @@ export const randomNumbers: RandomNumbers =
         randomNumberGenerator = nextGenerator
       }
 
-      return values
+      return { values, nextGenerator: randomNumberGenerator }
     },
   )
 
 export interface RandomNumbers {
-  (quantity: number, randomNumberGenerator: RandomNumberGenerator): ReadonlyArray<number>
-  (quantity: number): (randomNumberGenerator: RandomNumberGenerator) => ReadonlyArray<number>
+  (quantity: number, randomNumberGenerator: RandomNumberGenerator):
+    { values: ReadonlyArray<number>, nextGenerator: RandomNumberGenerator }
+
+  (quantity: number): (randomNumberGenerator: RandomNumberGenerator) =>
+    { values: ReadonlyArray<number>, nextGenerator: RandomNumberGenerator }
 }

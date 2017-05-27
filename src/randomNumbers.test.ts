@@ -9,7 +9,7 @@ export const test: Test = describe(`generate`,
     it(`returns an array containing 5 psuedo-random numbers`, () => {
       const random = createWithSeed(1000)
 
-      const actual = randomNumbers(5, random)
+      const { values } = randomNumbers(5, random)
 
       const expected = [
         0.7805178083945066,
@@ -19,7 +19,7 @@ export const test: Test = describe(`generate`,
         0.7255421064328402,
       ]
 
-      eq(expected, actual)
+      eq(expected, values)
     }),
   ),
 )

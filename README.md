@@ -15,7 +15,7 @@ npm install --save pure-number-generator
 
 ## API
 
-#### `createWithSeeds(seed0: number, seed1: number, seed2: number, seed3: number): RandomNumberGenerator`
+##### `createWithSeeds(seed0: number, seed1: number, seed2: number, seed3: number): RandomNumberGenerator`
 
 Creates a new random number generator given 4 seed values.
 
@@ -27,7 +27,7 @@ const generator = createWithSeeds(20, 40, 60, 80)
 const { value, nextGenerator } = next(generator)
 ```
 
-#### `createWithSeed(seed: number): RandomNumberGenerator`
+##### `createWithSeed(seed: number): RandomNumberGenerator`
 
 Creates a new random number generator given a single seed value.
 
@@ -39,7 +39,7 @@ const generator = createWithSeed(100)
 const { value, nextGenerator } = next(generator)
 ```
 
-#### `next(generator: RandomNumberGenerator): { value: number, nextGenerator: RandomNumberGenerator }`
+##### `next(generator: RandomNumberGenerator): { value: number, nextGenerator: RandomNumberGenerator }`
 
 Given a random number generator it returns an object containing a pseudo-random `value` and
 the `next` random number generator.
@@ -52,7 +52,7 @@ const generator = createWithSeed(100)
 const { value, nextGenerator } = next(generator)
 ```
 
-#### `randomNumbers(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`
+##### `randomNumbers(quantity: number, generator: RandomNumberGenerator): { values: ReadonlyArray<number>, nextGenerator: RandomNumberGenerator }`
 
 Creates an array of `n` amount of pseudo-random numbers derived from given generator.
 
@@ -62,7 +62,7 @@ import { randomNumbers, createWithSeed } from 'pure-number-generator'
 const values = randomNumbers(100, createWithSeed(100)) // => [ 0.7805178083945066, ... ] 100 items
 ```
 
-#### `iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): number`
+##### `iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): { value: number, nextGenerator: RandomNumberGenerator }`
 
 Generates a single number as the value by calling `next` `n` number of
 times. All numbers given as `iterations` will be rounded to the nearest integer and
