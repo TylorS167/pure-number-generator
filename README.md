@@ -73,3 +73,17 @@ import { iterateToRandomNumber, createWithSeed }
 
 const value = iterateToRandomNumber(1000, createWithSeed(100)) // => 0.5745331489015371
 ```
+
+##### `splitGenerator(quantity: number, seed: RandomNumberGenerator): ReadonlyArray<RandomNumberGenerator>`
+
+Given a quantity and a seed creates an array of `n` number random number generators.
+
+```typescript
+import { createWithSeed, splitGenerator } from 'pure-number-generator'
+
+const seed = createWithSeed(100)
+
+const generators = splitGenerator(100, seed) // => [ RandomNumberGenerator, ... ]
+
+console.log(generators.length) // => 100
+```
