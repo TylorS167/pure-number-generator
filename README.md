@@ -20,11 +20,11 @@ npm install --save pure-number-generator
 Creates a new random number generator given 4 seed values.
 
 ```typescript
-import { createWithSeeds } from 'pure-number-generator'
+import { createWithSeeds, next } from 'pure-number-generator'
 
 const generator = createWithSeeds(20, 40, 60, 80)
 
-const { value, next } = generator.next()
+const { value, nextGenerator } = next(generator)
 ```
 
 #### `createWithSeed(seed: number): RandomNumberGenerator`
@@ -32,11 +32,24 @@ const { value, next } = generator.next()
 Creates a new random number generator given a single seed value.
 
 ```typescript
-import { createWithSeed } from 'pure-number-generator'
+import { createWithSeed, next } from 'pure-number-generator'
 
 const generator = createWithSeed(100)
 
-const { value, next } = generator.next()
+const { value, nextGenerator } = next(generator)
+```
+
+#### `next(generator: RandomNumberGenerator): { value: number, nextGenerator: RandomNumberGenerator }`
+
+Given a random number generator it returns an object containing a pseudo-random `value` and
+the `next` random number generator.
+
+```typescript
+const { createWithSeed, next } from 'pure-number-generator'
+
+const generator = createWithSeed(100)
+
+const { value, nextGenerator } = next(generator)
 ```
 
 #### `randomNumbers(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`

@@ -1,6 +1,7 @@
 import { Curry2, curry2 } from '167'
 
 import { RandomNumberGenerator } from './RandomNumberGenerator'
+import { next } from './next'
 
 export const randomNumbers: Curry2<number, RandomNumberGenerator, ReadonlyArray<number>> =
   curry2(
@@ -11,11 +12,11 @@ export const randomNumbers: Curry2<number, RandomNumberGenerator, ReadonlyArray<
       const values = Array(quantity)
 
       for (let i = 0; i < quantity; ++i) {
-        const { value, next } = randomNumberGenerator.next()
+        const { value, nextGenerator } = next(randomNumberGenerator)
 
         values[i] = value
 
-        randomNumberGenerator = next
+        randomNumberGenerator = nextGenerator
       }
 
       return values

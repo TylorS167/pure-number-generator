@@ -1,13 +1,13 @@
 import { Test, describe, given, it } from '@typed/test'
 
+import { createWithSeed } from './createWithSeed'
 import { eq } from '@briancavalier/assert'
 import { randomNumbers } from './randomNumbers'
-import { seedRandom } from './seedRandom'
 
 export const test: Test = describe(`generate`,
   given(`an amount of 5 and a Random`,
     it(`returns an array containing 5 psuedo-random numbers`, () => {
-      const random = seedRandom(1000)
+      const random = createWithSeed(1000)
 
       const actual = randomNumbers(5, random)
 

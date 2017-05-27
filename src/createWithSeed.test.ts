@@ -2,6 +2,7 @@ import { Test, describe, given, it } from '@typed/test'
 
 import { createWithSeed } from './createWithSeed'
 import { eq } from '@briancavalier/assert'
+import { next } from './next'
 
 export const test: Test = describe(`createWithSeed`,
   given(`a seed value of 100`,
@@ -10,11 +11,11 @@ export const test: Test = describe(`createWithSeed`,
 
       const isEqual = eq(expectedValue)
 
-      isEqual(createWithSeed(100).next().value)
-      isEqual(createWithSeed(100).next().value)
-      isEqual(createWithSeed(100).next().value)
-      isEqual(createWithSeed(100).next().value)
-      isEqual(createWithSeed(100).next().value)
+      isEqual(next(createWithSeed(100)).value)
+      isEqual(next(createWithSeed(100)).value)
+      isEqual(next(createWithSeed(100)).value)
+      isEqual(next(createWithSeed(100)).value)
+      isEqual(next(createWithSeed(100)).value)
     }),
   ),
 )
