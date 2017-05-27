@@ -1,15 +1,19 @@
+import { Curry2, curry2 } from '167'
+
 import { Random } from './Random'
 
-export function iterations(amount: number, seed: Random): number {
-  let n = 0
+export const iterations: Curry2<number, Random, number> = curry2(
+  function iterations(amount: number, seed: Random): number {
+    let n = 0
 
-  for (let i = 0; i < amount; ++i) {
-    const { value, next } = seed.next()
+    for (let i = 0; i < amount; ++i) {
+      const { value, next } = seed.next()
 
-    n = value
+      n = value
 
-    seed = next
-  }
+      seed = next
+    }
 
-  return n
-}
+    return n
+  },
+)
