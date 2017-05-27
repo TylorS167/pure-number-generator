@@ -2,7 +2,7 @@
   "name": "pure-number-generator",
   "description": "Purely functional random number generation",
   "repository": "https://github.com/TylorS/pure-number-generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
