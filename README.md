@@ -1,5 +1,7 @@
 # Purely Functional Random Number Generator
 
+A small library that generates pseudo-random numbers between 0 and 1.
+
 ## Get it
 
 ```sh
