@@ -2,6 +2,9 @@
 
 A small library that generates pseudo-random numbers between 0 and 1.
 
+Based on a [gist](https://gist.github.com/briancavalier/f71314fcff5e7870608e) by @briancavalier.
+Many many thanks to him!
+
 ## Get it
 
 ```sh
