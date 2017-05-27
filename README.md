@@ -17,7 +17,7 @@ npm install --save pure-number-generator
 
 ### `newRandom(s0: number, s1: number, s2: number, s3: number): Random`
 
-Creates a new random number given 4 seed values.
+Creates a new random number generator given 4 seed values.
 
 ```typescript
 import { newRandom } from 'pure-number-generator'
@@ -29,7 +29,7 @@ const { value, next } = generator.next()
 
 ### `seedRandom(seed: number): Random`
 
-Creates a new random number generator given a single seed value
+Creates a new random number generator given a single seed value.
 
 ```typescript
 import { seedRandom } from 'pure-number-generator'
@@ -41,7 +41,7 @@ const { value, next } = generator.next()
 
 ### `generate(amount: number, generator: Random): ReadonlyArray<number>`
 
-Creates an array of `n` amount of pseudo-random numbers
+Creates an array of `n` amount of pseudo-random numbers derived from given generator.
 
 ```typescript
 import { generate, seedRandom } from 'pure-number-generator'
