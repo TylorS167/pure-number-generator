@@ -49,13 +49,13 @@ import { generate, seedRandom } from 'pure-number-generator'
 const values = generate(100, seedRandom(100)) // => [ 0.7805178083945066, ... ] 100 items
 ```
 
-### `randomValue(iterations: number, seed: Random): number`
+### `iterateToRandomNumber(iterations: number, seed: Random): number`
 
 Generates a single number as the value by calling `Random.next()` `n` number of
 times.
 
 ```typescript
-import { randomValue, seedRandom }
+import { iterateToRandomNumber, seedRandom }
 
-const value = randomValue(1000, seedRandom(100)) // => 0.5745331489015371
+const value = iterateToRandomNumber(1000, seedRandom(100)) // => 0.5745331489015371
 ```
