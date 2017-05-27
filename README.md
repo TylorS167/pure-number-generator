@@ -15,14 +15,14 @@ npm install --save pure-number-generator
 
 ## API
 
-### `createRandom(seed0: number, seed1: number, seed2: number, seed3: number): Random`
+### `createRandomNumberGenerator(seed0: number, seed1: number, seed2: number, seed3: number): Random`
 
 Creates a new random number generator given 4 seed values.
 
 ```typescript
-import { newRandom } from 'pure-number-generator'
+import { createRandomNumberGenerator } from 'pure-number-generator'
 
-const generator = newRandom(20, 40, 60, 80)
+const generator = createRandomNumberGenerator(20, 40, 60, 80)
 
 const { value, next } = generator.next()
 ```
