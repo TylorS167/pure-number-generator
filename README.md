@@ -39,14 +39,14 @@ const generator = seedRandom(100)
 const { value, next } = generator.next()
 ```
 
-#### `generate(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`
+#### `generateRandomNumbers(quantity: number, generator: RandomNumberGenerator): ReadonlyArray<number>`
 
 Creates an array of `n` amount of pseudo-random numbers derived from given generator.
 
 ```typescript
-import { generate, seedRandom } from 'pure-number-generator'
+import { generateRandomNumbers, seedRandom } from 'pure-number-generator'
 
-const values = generate(100, seedRandom(100)) // => [ 0.7805178083945066, ... ] 100 items
+const values = generateRandomNumbers(100, seedRandom(100)) // => [ 0.7805178083945066, ... ] 100 items
 ```
 
 #### `iterateToRandomNumber(iterations: number, seed: RandomNumberGenerator): number`
