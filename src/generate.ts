@@ -7,11 +7,11 @@ export const generate: Curry2<number, Random, ReadonlyArray<number>> = curry2(
     const array = Array(amount)
 
     for (let i = 0; i < amount; ++i) {
-      const { value, random } = gen.next()
+      const { value, next } = gen.next()
 
       array[i] = value
 
-      gen = random
+      gen = next
     }
 
     return array

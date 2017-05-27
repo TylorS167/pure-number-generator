@@ -13,14 +13,14 @@ export class Random {
     this.s3 = s3
   }
 
-  public next(): { value: number, random: Random } {
+  public next(): { value: number, next: Random } {
     const e = (this.s0 - rot(this.s1, 27)) >>> 0
     const s0 = (this.s1 ^ rot(this.s2, 17)) >>> 0
     const s1 = (this.s2 + this.s3) >>> 0
     const s2 = (this.s3 + e) >>> 0
     const s3 = (e + s0) >>> 0
 
-    return { value: s3 / REAL_DIVISOR, random: new Random(s0, s1, s2, s3) }
+    return { value: s3 / REAL_DIVISOR, next: new Random(s0, s1, s2, s3) }
   }
 }
 
