@@ -1,5 +1,4 @@
 import { RandomNumberGenerator } from './RandomNumberGenerator'
-import { createWithSeed } from './createWithSeed'
 import { curry2 } from '167'
 import { next } from './next'
 
@@ -12,12 +11,10 @@ export const splitGenerator: SplitGenerator = curry2(
     let generator = seed
 
     for (let i = 0; i < Math.max(Math.round(quantity), 1); ++i) {
-      const { value, nextGenerator } = next(generator)
+      const { nextGenerator } = next(generator)
 
       generators[i] = nextGenerator
       generator = nextGenerator
-
-      seed = createWithSeed(value)
     }
 
     return generators
