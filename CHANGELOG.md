@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/TylorS/pure-number-generator/compare/v1.0.0...v1.1.0) (2017-05-28)
+
+
+### Bug Fixes
+
+* **splitGenerator:** use the nextGenerator as the seed value ([a332d5a](https://github.com/TylorS/pure-number-generator/commit/a332d5a))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/TylorS/pure-number-generator/compare/12841c3...v1.0.0) (2017-05-27)
 
