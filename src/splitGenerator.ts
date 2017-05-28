@@ -9,11 +9,13 @@ export const splitGenerator: SplitGenerator = curry2(
     seed: RandomNumberGenerator): ReadonlyArray<RandomNumberGenerator>
   {
     const generators: Array<RandomNumberGenerator> = Array(quantity)
+    let generator = seed
 
     for (let i = 0; i < Math.max(Math.round(quantity), 1); ++i) {
-      const { value, nextGenerator } = next(seed)
+      const { value, nextGenerator } = next(generator)
 
       generators[i] = nextGenerator
+      generator = nextGenerator
 
       seed = createWithSeed(value)
     }
