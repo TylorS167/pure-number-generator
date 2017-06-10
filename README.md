@@ -1,5 +1,7 @@
 # Purely Functional Random Number Generator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TylorS167/pure-number-generator.svg)](https://greenkeeper.io/)
+
 A small library that generates pseudo-random numbers between 0 and 1.
 
 Based on a [gist](https://gist.github.com/briancavalier/f71314fcff5e7870608e) by @briancavalier.
