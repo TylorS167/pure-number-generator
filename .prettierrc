@@ -1,0 +1,36 @@
+{
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "parser": "typescript",
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "useTabs": false,
+    "endOfLine":"lf",
+    "overrides": [
+        {
+            "files": [".babelrc", ".editorconfig", ".prettierrc", "*.json"],
+            "options": {
+                "parser": "json",
+                "singleQuote": false,
+                "trailingComma": "es5"
+            }
+        },
+        {
+            "files": ["*.scss"],
+            "options": {
+                "parser": "scss",
+                "singleQuote": false
+            }
+        },
+        {
+            "files": ["*.html"],
+            "options": {
+                "parser": "html",
+                "singleQuote": false
+            }
+        }
+    ]
+}

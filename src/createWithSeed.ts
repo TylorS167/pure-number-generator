@@ -1,9 +1,17 @@
-import { RandomNumberGenerator } from './RandomNumberGenerator'
+import {
+    PseudorandomNumberGenerator,
+    PseudorandomNumberGeneratorImpl,
+} from './PseudorandomNumberGenerator'
 
 const RANDOM_SEED = 20
 
-export function createWithSeed(seed: number): RandomNumberGenerator {
-  const calculatedSeed = seed >>> 0
+export function createWithSeed(seed: number): PseudorandomNumberGenerator {
+    const calculatedSeed = seed >>> 0
 
-  return new RandomNumberGenerator(RANDOM_SEED, calculatedSeed, calculatedSeed, calculatedSeed)
+    return new PseudorandomNumberGeneratorImpl(
+        RANDOM_SEED,
+        calculatedSeed,
+        calculatedSeed,
+        calculatedSeed,
+    )
 }
