@@ -17,6 +17,6 @@
     "outDir": "../lib"
   },
   "exclude": [
-    "../src/**/*.test.ts"
+    "../src/**/*.__test__.ts"
   ]
 }

@@ -19,6 +19,6 @@
     "outDir": "../lib.es2015"
   },
   "exclude": [
-    "../src/**/*.test.ts"
+    "../src/**/*.__test__.ts"
   ]
 }
