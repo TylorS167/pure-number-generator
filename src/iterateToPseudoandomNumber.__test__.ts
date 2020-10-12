@@ -1,6 +1,5 @@
 import * as tt from '@typed/test'
 import { createWithSeed } from './createWithSeed'
-import { eq } from '@briancavalier/assert'
 import { iterateToPseudorandomNumber } from './iterateToPseudorandomNumber'
 
 export const test: tt.Test = tt.describe(`iterateToPseudorandomNumber`, [
@@ -12,7 +11,7 @@ export const test: tt.Test = tt.describe(`iterateToPseudorandomNumber`, [
                 random,
             )
 
-            eq(0.5745331489015371, value)
+            assert.equal(0.5745331489015371, value)
 
             assert.equal(
                 0.40251842862926424,
